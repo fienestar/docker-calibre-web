@@ -28,6 +28,9 @@ RUN \
     libxi6 \
     libxslt1.1 \
     python3-venv && \
+  echo "**** Installing all mod packages ****" && \
+  apt-get install -y --no-install-recommends \
+  libxtst6 libxrandr2 libxkbfile1 libxcomposite1 libopengl0 libnss3 libxkbcommon0 libegl1 libxdamage1 libgl1-mesa-glx xz-utils && \
   echo "**** install calibre-web ****" && \
   if [ -z ${CALIBREWEB_RELEASE+x} ]; then \
     CALIBREWEB_RELEASE=$(curl -sX GET "https://api.github.com/repos/janeczku/calibre-web/releases/latest" \
