@@ -33,12 +33,12 @@ RUN \
   libxtst6 libxrandr2 libxkbfile1 libxcomposite1 libopengl0 libnss3 libxkbcommon0 libegl1 libxdamage1 libgl1-mesa-glx xz-utils && \
   echo "**** install calibre-web ****" && \
   if [ -z ${CALIBREWEB_RELEASE+x} ]; then \
-    CALIBREWEB_RELEASE=$(curl -sX GET "https://api.github.com/repos/janeczku/calibre-web/releases/latest" \
+    CALIBREWEB_RELEASE=$(curl -sX GET "https://api.github.com/repos/fienestar/calibre-web/releases/latest" \
     | awk '/tag_name/{print $4;exit}' FS='[""]'); \
   fi && \
   curl -o \
     /tmp/calibre-web.tar.gz -L \
-    https://github.com/janeczku/calibre-web/archive/${CALIBREWEB_RELEASE}.tar.gz && \
+    https://github.com/fienestar/calibre-web/archive/${CALIBREWEB_RELEASE}.tar.gz && \
   mkdir -p \
     /app/calibre-web && \
   tar xf \
